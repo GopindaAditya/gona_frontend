@@ -7,6 +7,11 @@ export default function SalesChart() {
 
   useEffect(() => {
     if (!chartRef.current) return;
+
+    const isDark = document.documentElement.classList.contains("dark");
+    const gridColor = isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
+    const textColor = isDark ? "#FFFFFF" : "#000000";
+
     const ctx = chartRef.current;
     const chart = new Chart(ctx, {
       type: "line",
@@ -31,8 +36,8 @@ export default function SalesChart() {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          y: { beginAtZero: true, grid: { color: "rgba(0,0,0,0.1)" } },
-          x: { grid: { display: false } },
+          y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor, drawBorder: false } },
+          x: { ticks: { color: textColor }, grid: { display: false, drawBorder: false } },
         },
       },
     });

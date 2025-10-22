@@ -1,10 +1,10 @@
 import Sidebar from "@/components/layouts/Sidebar";
-// import Header from "@/components/layouts/Header";
+import Header from "@/components/layouts/Header";
 import StatCard from "@/components/features/dashboard/StatCard";
 import SalesChart from "@/components/features/dashboard/SalesChart";
-// import TopProducts from "@/components/features/dashboard/TopProducts";
-// import LowStockTable from "@/components/features/dashboard/LowStockTable";
-// import RecentActivity from "@/components/features/dashboard/RecentActivity";
+import TopProducts from "@/components/features/dashboard/TopProducts";
+import LowStockTable from "@/components/features/dashboard/LowStockTable";
+import RecentActivity from "@/components/features/dashboard/RecentActivity";
 import Button from "@/components/ui/Button";
 
 export default function DashboardPage() {
@@ -12,7 +12,7 @@ export default function DashboardPage() {
     <div className="flex h-screen bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
       <Sidebar />
       <main className="flex-1 p-8 overflow-y-auto">
-        {/* <Header /> */}
+        <Header />
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -32,11 +32,11 @@ export default function DashboardPage() {
           <div className="lg:col-span-2">
             <SalesChart />
           </div>
-          {/* <TopProducts />
+          <TopProducts />
           <div className="lg:col-span-2">
             <LowStockTable />
           </div>
-          <RecentActivity /> */}
+          <RecentActivity />
         </div>
       </main>
     </div>
