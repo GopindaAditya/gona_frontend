@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/helpers/utils";
-import Button from "@/components/ui/Button";
 
 const menu = [
   { icon: "dashboard", label: "Dashboard", href: "/dashboard" },
