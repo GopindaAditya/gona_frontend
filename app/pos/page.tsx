@@ -2,23 +2,10 @@ import Sidebar from "@/components/layouts/Sidebar";
 import Header from "@/components/layouts/Header";
 import DataFilter from "@/components/features/pos/DataFilter";
 import ProductGrid from "@/components/features/pos/ProductGrid";
+import OrderSummary from "@/components/features/pos/OrderSummary";
 
 export default function PosPage() {
   const products = [
-    {
-      name: "Espresso",
-      price: "Rp 25.000",
-      stock: 50,
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCbB_ru_ba87pwSwbcbHpPg-ltwuc_x29s-fWv_kioCJaIMN8kC00gSQG8t-GYf92QK8S7G7LYus_d_Dc3KYa10w55q3uXI_I74R3tm7u1r6vYHH9ZEXXKs4iPg0Ky-mUmfA74HhsreqxaW-dWMr4d56CEl7bjY3sU-jq_41qwLV0aGRonVuD9OuoM5kbKJnc53iq01r5BjkjHY6_skoyT67mhJyOhebCmIbSh5AA35Ty-iS6swvALAmux5Ahy6aRRxMCvRsVJQQkLr",
-    },
-    {
-      name: "Espresso",
-      price: "Rp 25.000",
-      stock: 50,
-      image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCbB_ru_ba87pwSwbcbHpPg-ltwuc_x29s-fWv_kioCJaIMN8kC00gSQG8t-GYf92QK8S7G7LYus_d_Dc3KYa10w55q3uXI_I74R3tm7u1r6vYHH9ZEXXKs4iPg0Ky-mUmfA74HhsreqxaW-dWMr4d56CEl7bjY3sU-jq_41qwLV0aGRonVuD9OuoM5kbKJnc53iq01r5BjkjHY6_skoyT67mhJyOhebCmIbSh5AA35Ty-iS6swvALAmux5Ahy6aRRxMCvRsVJQQkLr",
-    },
     {
       name: "Espresso",
       price: "Rp 25.000",
@@ -62,18 +49,38 @@ export default function PosPage() {
         "https://lh3.googleusercontent.com/aida-public/AB6AXuA36uE0tFYtL0cAuO5BkbcXK09oe1cbdLtnWwmb_QJMlQznS4QQd-rLHKUqL0JytGtorfJfIJLRwUSqneKlbrRnOWeEryGxGqWmr5eqfdnR7Zxvm2RB8--rq7eH9cQaKB9SBY943ZsADCNKVdPGYfWjnxgL2XFMoDmBUaztLoJMUh6XV88IYAFXYUAAqXJPobeHmSx0EZ8k_QiYe_p-HMfdh-FSQcOs0L1gBnHFbIlk5PE0fmvtoLgVEgtuq75RkWotL2sbERrHLwqr",
     },
   ];
+
   return (
     <div className="flex h-screen bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
       <Sidebar />
-      <main className="flex-1 p-5 overflow-y-auto">
+
+      {/* Main content */}
+      <main className="flex-1 flex flex-col p-5 overflow-hidden">
         <Header
           title="Point of Sale"
           subtitle="Manage your store transactions easily."
         />
-        <div className="mt-4 flex flex-col sm:flex-col gap-4">
-          <DataFilter />
+
+        {/* Main area: kiri (produk) & kanan (summary) */}
+        <div className="flex flex-1 mt-4 gap-4 overflow-hidden">
+          {/* KIRI */}
+          <div className="flex-1 flex flex-col overflow-hidden pr-2">
+            {/* Search bar + filter (fixed di atas area scroll produk) */}
+            <div className="sticky top-0 z-10 bg-background-light dark:bg-background-dark pb-3">
+              <DataFilter />
+            </div>
+
+            {/* Produk bisa di-scroll */}
+            <div className="flex-1 overflow-y-auto">
+              <ProductGrid products={products} />
+            </div>
+          </div>
+
+          {/* KANAN */}
+          <div className="w-full md:w-[350px] lg:w-[400px] flex-shrink-0">
+            <OrderSummary />
+          </div>
         </div>
-        <ProductGrid products={products} />
       </main>
     </div>
   );
