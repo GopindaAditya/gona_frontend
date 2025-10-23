@@ -6,13 +6,16 @@ import TopProducts from "@/components/features/dashboard/TopProducts";
 import LowStockTable from "@/components/features/dashboard/LowStockTable";
 import RecentActivity from "@/components/features/dashboard/RecentActivity";
 import Button from "@/components/ui/Button";
+import DataFilter from "@/components/features/dashboard/DataFilter";
 
 export default function DashboardPage() {
+
   return (
     <div className="flex h-screen bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
       <Sidebar />
       <main className="flex-1 p-5 overflow-y-auto">
         <Header />
+        <DataFilter />
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
