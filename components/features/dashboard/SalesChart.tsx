@@ -36,8 +36,8 @@ export default function SalesChart() {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor, drawBorder: false } },
-          x: { ticks: { color: textColor }, grid: { display: false, drawBorder: false } },
+          y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor} },
+          x: { ticks: { color: textColor }, grid: { display: false} },
         },
       },
     });
