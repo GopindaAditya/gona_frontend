@@ -11,20 +11,39 @@ export default function DashboardPage() {
   return (
     <div className="flex h-screen bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
       <Sidebar />
-      <main className="flex-1 p-8 overflow-y-auto">
+      <main className="flex-1 p-5 overflow-y-auto">
         <Header />
 
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <StatCard title="Penjualan Hari Ini" value="Rp 1.500.000" trend="+10%" trendType="up" />
-          <StatCard title="Jumlah Transaksi" value="50" trend="-5%" trendType="down" />
-          <StatCard title="Stok Rendah" value="12 items" trend="+2%" trendType="neutral" />
+          <StatCard
+            title="Penjualan Hari Ini"
+            value="Rp 1.500.000"
+            trend="+10%"
+            trendType="up"
+          />
+          <StatCard
+            title="Jumlah Transaksi"
+            value="50"
+            trend="-5%"
+            trendType="down"
+          />
+          <StatCard
+            title="Stok Rendah"
+            value="12 items"
+            trend="+2%"
+            trendType="neutral"
+          />
         </div>
 
         {/* Action Buttons */}
         <div className="flex gap-4 mb-8">
-          <Button variant="primary" icon="add_shopping_cart">Buat Penjualan Baru</Button>
-          <Button variant="outline" icon="add_box">Tambah Produk</Button>
+          <Button className="w-1/2" variant="primary" icon="add_shopping_cart">
+            Buat Penjualan Baru
+          </Button>
+          <Button className="w-1/2" variant="outline" icon="add_box">
+            Tambah Produk
+          </Button>
         </div>
 
         {/* Charts and Tables */}
