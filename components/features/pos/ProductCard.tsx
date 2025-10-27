@@ -50,7 +50,7 @@ export default function ProductCard({
       <button
         onClick={onAddToCart}
         className={cn(
-          "w-[calc(100%-1.5rem)] mx-auto flex items-center justify-center rounded-md h-9",
+          "w-[calc(100%-1.5rem)] mx-auto flex items-center justify-center rounded-md h-9 cursor-pointer",
           "bg-primary/20 dark:bg-primary/30 text-black dark:text-white gap-2 text-sm font-medium leading-normal tracking-[0.015em]",
           "opacity-0 group-hover:opacity-100 transition-opacity"
         )}

@@ -99,6 +99,23 @@ export function DialogTitle({
   );
 }
 
+// DialogDescription
+export function DialogDescription({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <p
+      className={cn("mt-2 text-sm text-gray-500 dark:text-gray-400", className)}
+    >
+      {children}
+    </p>
+  );
+}
+
 /* DialogFooter */
 export function DialogFooter({
   children,
