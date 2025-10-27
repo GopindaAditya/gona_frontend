@@ -77,7 +77,7 @@ export default function PosPage() {
           </div>
 
           {/* KANAN */}
-          <div className="w-full md:w-[350px] lg:w-[400px] flex-shrink-0">
+          <div className="w-full md:w-[350px] lg:w-[400px] flex-shrink-0 overflow-y-auto">
             <OrderSummary />
           </div>
         </div>

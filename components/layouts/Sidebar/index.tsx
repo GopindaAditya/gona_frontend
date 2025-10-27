@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Button from "@/components/ui/Button";
 import { cn } from "@/lib/helpers/utils";
 
 const menu = [
@@ -86,18 +87,17 @@ export default function Sidebar() {
       {/* Footer Buttons */}
       <div className="mt-auto flex flex-col gap-2">
         {/* Help Button */}
-        <button
+        <Button
+          variant="ghost"
+          icon={!sidebarOpen ? "help_outline" : undefined}
           className={cn(
-            "flex items-center justify-center gap-2 rounded-lg bg-primary text-text-light dark:text-text-dark h-10 transition-all duration-300",
+            "flex items-center justify-center gap-2 rounded-lg h-10 transition-all duration-300 text-text-light dark:text-text-dark bg-primary hover:bg-primary/80",
             sidebarOpen ? "px-4 w-full" : "w-10"
           )}
+          onClick={() => console.log("Help clicked")}
         >
-          {sidebarOpen ? (
-            <span className="truncate">Help</span>
-          ) : (
-            <span className="material-symbols-outlined">help_outline</span>
-          )}
-        </button>
+          {sidebarOpen && "Help"}
+        </Button>
 
         {/* Collapse Toggle Button */}
         <button
