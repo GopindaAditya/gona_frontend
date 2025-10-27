@@ -2,7 +2,7 @@ import Card from "@/components/ui/Card";
 
 export default function RecentActivity() {
   return (
-    <Card>
+    <Card className="p-6">
       <h3 className="text-lg font-bold mb-4">Aktivitas Terbaru</h3>
       <ul className="space-y-4">
         <li className="flex items-center gap-4">

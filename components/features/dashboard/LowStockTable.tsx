@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function LowStockTable() {
   return (
-    <Card>
+    <Card className="p-6">
       <h3 className="text-lg font-bold mb-4">Peringatan Stok</h3>
       <div className="overflow-x-auto">
         <table className="w-full text-left">
@@ -19,21 +19,36 @@ export default function LowStockTable() {
               <td className="py-3">Biji Kopi Arabika</td>
               <td className="py-3 text-danger font-medium">5 pcs</td>
               <td className="py-3 text-right">
-                <Button variant="primary" className="h-8 px-3 text-sm font-bold">Order</Button>
+                <Button
+                  variant="primary"
+                  className="h-8 px-3 text-sm font-bold"
+                >
+                  Order
+                </Button>
               </td>
             </tr>
             <tr>
               <td className="py-3">Susu UHT Full Cream</td>
               <td className="py-3 text-danger font-medium">2 pcs</td>
               <td className="py-3 text-right">
-                <Button variant="primary" className="h-8 px-3 text-sm font-bold">Order</Button>
+                <Button
+                  variant="primary"
+                  className="h-8 px-3 text-sm font-bold"
+                >
+                  Order
+                </Button>
               </td>
             </tr>
             <tr>
               <td className="py-3">Gula Aren Cair</td>
               <td className="py-3 text-danger font-medium">1 pcs</td>
               <td className="py-3 text-right">
-                <Button variant="primary" className="h-8 px-3 text-sm font-bold">Order</Button>
+                <Button
+                  variant="primary"
+                  className="h-8 px-3 text-sm font-bold"
+                >
+                  Order
+                </Button>
               </td>
             </tr>
           </tbody>
