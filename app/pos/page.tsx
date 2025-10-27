@@ -3,6 +3,7 @@ import Header from "@/components/layouts/Header";
 import DataFilter from "@/components/features/pos/DataFilter";
 import ProductGrid from "@/components/features/pos/ProductGrid";
 import OrderSummary from "@/components/features/pos/OrderSummary";
+import MobileOrderSummaryButton from "@/components/features/pos/MobileOrderSummaryButton";
 
 export default function PosPage() {
   const products = [
@@ -55,32 +56,39 @@ export default function PosPage() {
       <Sidebar />
 
       {/* Main content */}
-      <main className="flex-1 flex flex-col p-5 overflow-hidden">
-        <Header
-          title="Point of Sale"
-          subtitle="Manage your store transactions easily."
-        />
+      <main className="flex-1 flex flex-col p-3 sm:p-4 lg:p-5 overflow-hidden">
+        <div className="flex-shrink-0 border-b border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark">
+          <Header
+            title="Point of Sale"
+            subtitle="Manage your store transactions easily."
+          />
+        </div>
 
-        {/* Main area: kiri (produk) & kanan (summary) */}
-        <div className="flex flex-1 mt-4 gap-4 overflow-hidden">
-          {/* KIRI */}
-          <div className="flex-1 flex flex-col overflow-hidden pr-2">
-            {/* Search bar + filter (fixed di atas area scroll produk) */}
-            <div className="sticky top-0 z-10 bg-background-light dark:bg-background-dark pb-3">
+        {/* Main area */}
+        <div className="flex flex-col lg:flex-row flex-1 mt-3 sm:mt-4 gap-3 sm:gap-4 overflow-hidden">
+          {/* LEFT SECTION - Products */}
+          <div className="flex-1 flex flex-col overflow-hidden lg:pr-2">
+            {/* Search bar + filter */}
+            <div className="sticky top-0 z-10 bg-background-light dark:bg-background-dark pb-2 sm:pb-3">
               <DataFilter />
             </div>
 
-            {/* Produk bisa di-scroll */}
+            {/* Scrollable products area */}
             <div className="flex-1 overflow-y-auto">
               <ProductGrid products={products} />
             </div>
           </div>
 
-          {/* KANAN */}
-          <div className="w-full md:w-[350px] lg:w-[400px] flex-shrink-0 overflow-y-auto">
+          {/* RIGHT SECTION - Order Summary (Desktop only) */}
+          <div className="hidden lg:block w-[350px] xl:w-[400px] flex-shrink-0 overflow-y-auto">
             <OrderSummary />
           </div>
         </div>
+
+        {/* Mobile floating button with popup */}
+        <MobileOrderSummaryButton>
+          <OrderSummary />
+        </MobileOrderSummaryButton>
       </main>
     </div>
   );
