@@ -9,7 +9,6 @@ import {
   DialogFooter,
 } from "@/components/ui/Dialog";
 import Button from "@/components/ui/Button";
-import { cn } from "@/lib/helpers/utils";
 
 export function PaymentSuccessDialog({
   open,
