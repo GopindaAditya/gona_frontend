@@ -5,7 +5,6 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import Search from "@/components/ui/Search";
 import { PaymentSuccessDialog } from "@/components/features/pos/PaymentSuccessDialog";
-import { cn } from "@/lib/helpers/utils";
 
 type OrderItem = {
   id: number;
