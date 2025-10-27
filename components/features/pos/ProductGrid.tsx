@@ -4,7 +4,18 @@ import { useState } from "react";
 import ProductCard from "./ProductCard";
 import AddToCartDialog from "./AddToCartDialog";
 
-export default function ProductGrid({ products }: any) {
+interface Product {
+  name: string;
+  price: string;
+  stock: number;
+  image: string;
+}
+
+interface ProductGridProps {
+  products: Product[];
+}
+
+export default function ProductGrid({ products }: ProductGridProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [addedProduct, setAddedProduct] = useState<string | null>(null);
 
