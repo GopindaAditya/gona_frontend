@@ -31,7 +31,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
   return (
     <>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-4">
-        {products.map((p: any, i: number) => (
+        {products.map((p, i) => (
           <ProductCard
             key={i}
             name={p.name}
@@ -41,7 +41,6 @@ export default function ProductGrid({ products }: ProductGridProps) {
             onAddToCart={() => handleAddToCart(p.name)}
           />
         ))}
-      </div>
 
       <AddToCartDialog
         open={dialogOpen}
