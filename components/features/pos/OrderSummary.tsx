@@ -26,7 +26,7 @@ export default function OrderSummary() {
     { icon: "account_balance_wallet", label: "E-Wallet" },
   ];
 
-  const [customer, setCustomer] = useState({
+  const [customer] = useState({
     name: "Budi Santoso",
     phone: "0812-3456-7890",
     image:
